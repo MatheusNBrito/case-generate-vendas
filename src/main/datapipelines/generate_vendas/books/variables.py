@@ -12,7 +12,7 @@ class Variables:
     functions = Functions()
 
     # vendasColSeq - colunas da tabela "vendas_raw"
-    vendasColSeq = [
+    vendas_col_seq = [
         F.col(constants.D_DT_VD).cast(DateType()).alias(constants.DATA_EMISSAO),
         F.col(constants.N_ID_FIL).cast(LongType()).alias(constants.CODIGO_FILIAL),
         F.col(constants.N_ID_VD_FIL).cast(LongType()).alias(constants.CODIGO_CUPOM_VENDA),
@@ -20,7 +20,7 @@ class Variables:
     ]
 
     # itensVendasColSeq - colunas da tabela "itens_vendas_raw"
-    itensVendasColSeq = [
+    itens_vendas_col_seq = [
         F.col(constants.N_ID_FIL).cast(LongType()).alias(constants.CODIGO_FILIAL),
         F.col(constants.N_ID_VD_FIL).cast(LongType()).alias(constants.CODIGO_CUPOM_VENDA),
         F.col(constants.N_ID_IT).cast(LongType()).alias(constants.CODIGO_ITEM),
@@ -30,19 +30,19 @@ class Variables:
         F.col(constants.N_QTD).cast(IntegerType()).alias(constants.QUANTIDADE)
     ]
 
-    pedidoVendaColSeq = [
+    pedido_venda_col_seq = [
         F.col(constants.N_ID_FIL).cast(LongType()).alias(constants.CODIGO_FILIAL),
         F.col(constants.N_ID_VD_FIL).cast(LongType()).alias(constants.CODIGO_CUPOM_VENDA),
         F.col(constants.N_ID_PDD).cast(LongType()).alias(constants.N_ID_PDD)
     ]
 
-    pedidosColSeq = [
+    pedidos_col_seq = [
         F.col(constants.N_ID_PDD).cast(LongType()).alias(constants.N_ID_PDD),
         F.col(constants.V_CNL_ORIG_PDD).cast(StringType()).alias(constants.CANAL_VENDA)
     ]
 
-    itensVendasSelCol = [
-        F.col(constants.CODIGO_FILIAL),  # Removido o alias redundante
+    itens_vendas_sel_col = [
+        F.col(constants.CODIGO_FILIAL), 
         F.col(constants.CODIGO_CUPOM_VENDA),
         F.col(constants.CODIGO_ITEM),
         F.col(constants.QUANTIDADE),
